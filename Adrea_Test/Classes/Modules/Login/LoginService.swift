@@ -2,7 +2,7 @@
 //  LoginService.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/4/18.
+//  Created by Yassine EL HALAOUI on 11/4/18.
 //  Copyright © 2018 Fly. All rights reserved.
 //
 
@@ -16,9 +16,6 @@ class LoginService {
             if err != nil {
                 return
             }
-
-            print(user?.uid)
-
         })
     }
 
@@ -27,9 +24,6 @@ class LoginService {
             if err != nil {
                 return
             }
-
-            print(user?.uid)
-
         })
     }
 

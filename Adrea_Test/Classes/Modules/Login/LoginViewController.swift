@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/4/18.
+//  Created by Yassine EL HALAOUI on 11/4/18.
 //  Copyright © 2018 Fly. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ protocol LoginViewDelegate: class {
 }
 
 class LoginViewController: UIViewController {
-
 
     var presenter = LoginPresenter(service: LoginService())
 
@@ -73,7 +72,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginViewDelegate {
 
     func signInSuccess() {
-        // TODO:
+        // TODO: - navigate to main page
     }
 
     func signInFaild(_ error: String) {
@@ -81,7 +80,7 @@ extension LoginViewController: LoginViewDelegate {
     }
 
     func loginSuccess() {
-        // TODO:
+        // TODO: - navigate to main page
     }
 
     func loginFaild(_ error: String) {

@@ -7,5 +7,7 @@ target 'Adrea_Test' do
 
   # Pods for Adrea_Test
   pod 'Firebase/Auth', '~> 3.0'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
 end
