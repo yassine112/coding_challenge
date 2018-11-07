@@ -8,29 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		041F0668218F04AA009B3CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F0667218F04AA009B3CF9 /* AppDelegate.swift */; };
-		041F066A218F04AA009B3CF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F0669218F04AA009B3CF9 /* LoginViewController.swift */; };
 		041F066D218F04AA009B3CF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041F066B218F04AA009B3CF9 /* Main.storyboard */; };
 		041F066F218F04AC009B3CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041F066E218F04AC009B3CF9 /* Assets.xcassets */; };
 		041F0672218F04AC009B3CF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041F0670218F04AC009B3CF9 /* LaunchScreen.storyboard */; };
-		041F067D218F0719009B3CF9 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F067C218F0719009B3CF9 /* LoginPresenter.swift */; };
-		041F0683218F6222009B3CF9 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F0682218F6222009B3CF9 /* LoginService.swift */; };
 		041F0686218F6545009B3CF9 /* FacebookConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F0685218F6545009B3CF9 /* FacebookConnectViewController.swift */; };
 		041F0688218F695B009B3CF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041F0687218F695B009B3CF9 /* GoogleService-Info.plist */; };
+		041F068E2190B18F009B3CF9 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F068D2190B18F009B3CF9 /* Album.swift */; };
+		041F06912190C3BC009B3CF9 /* AlbumPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F06902190C3BC009B3CF9 /* AlbumPicturesViewController.swift */; };
+		041F06952190C486009B3CF9 /* AlbumPicturesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F06942190C486009B3CF9 /* AlbumPicturesPresenter.swift */; };
+		041F069A21922C00009B3CF9 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F069821922C00009B3CF9 /* AlbumCollectionViewCell.swift */; };
+		041F069B21922C00009B3CF9 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041F069921922C00009B3CF9 /* AlbumCollectionViewCell.xib */; };
+		041F069E2193370D009B3CF9 /* PicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */; };
 		713BE4E0A868922A50794AB7 /* Pods_Adrea_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F1EECA347B5FF2C5DC6737 /* Pods_Adrea_Test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041F0664218F04AA009B3CF9 /* Adrea_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adrea_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041F0667218F04AA009B3CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		041F0669218F04AA009B3CF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		041F066C218F04AA009B3CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		041F066E218F04AC009B3CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041F0671218F04AC009B3CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041F0673218F04AC009B3CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		041F067C218F0719009B3CF9 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		041F0682218F6222009B3CF9 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		041F0685218F6545009B3CF9 /* FacebookConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookConnectViewController.swift; sourceTree = "<group>"; };
 		041F0687218F695B009B3CF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		041F068D2190B18F009B3CF9 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		041F06902190C3BC009B3CF9 /* AlbumPicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPicturesViewController.swift; sourceTree = "<group>"; };
+		041F06942190C486009B3CF9 /* AlbumPicturesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPicturesPresenter.swift; sourceTree = "<group>"; };
+		041F069821922C00009B3CF9 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		041F069921922C00009B3CF9 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCollectionViewController.swift; sourceTree = "<group>"; };
 		26B09AF8F734E83E41640E6F /* Pods-Adrea_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adrea_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adrea_Test/Pods-Adrea_Test.debug.xcconfig"; sourceTree = "<group>"; };
 		55F1EECA347B5FF2C5DC6737 /* Pods_Adrea_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adrea_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D350C5A46B3CF6ED6D3D29 /* Pods-Adrea_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adrea_Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Adrea_Test/Pods-Adrea_Test.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 		041F0679218F0542009B3CF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				041F069621922B7A009B3CF9 /* Custom Views & Cells */,
+				041F068C2190B182009B3CF9 /* Models */,
 				041F067A218F06AA009B3CF9 /* Modules */,
 			);
 			path = Classes;
@@ -91,20 +99,11 @@
 		041F067A218F06AA009B3CF9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				041F069C21933558009B3CF9 /* Pictures */,
+				041F068F2190C36E009B3CF9 /* Album pictures */,
 				041F0684218F6509009B3CF9 /* Facebook Account Connect */,
-				041F067B218F06BC009B3CF9 /* Login */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		041F067B218F06BC009B3CF9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				041F0669218F04AA009B3CF9 /* LoginViewController.swift */,
-				041F067C218F0719009B3CF9 /* LoginPresenter.swift */,
-				041F0682218F6222009B3CF9 /* LoginService.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		041F0684218F6509009B3CF9 /* Facebook Account Connect */ = {
@@ -113,6 +112,48 @@
 				041F0685218F6545009B3CF9 /* FacebookConnectViewController.swift */,
 			);
 			path = "Facebook Account Connect";
+			sourceTree = "<group>";
+		};
+		041F068C2190B182009B3CF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				041F068D2190B18F009B3CF9 /* Album.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		041F068F2190C36E009B3CF9 /* Album pictures */ = {
+			isa = PBXGroup;
+			children = (
+				041F06902190C3BC009B3CF9 /* AlbumPicturesViewController.swift */,
+				041F06942190C486009B3CF9 /* AlbumPicturesPresenter.swift */,
+			);
+			path = "Album pictures";
+			sourceTree = "<group>";
+		};
+		041F069621922B7A009B3CF9 /* Custom Views & Cells */ = {
+			isa = PBXGroup;
+			children = (
+				041F069721922BCB009B3CF9 /* Album Cell */,
+			);
+			path = "Custom Views & Cells";
+			sourceTree = "<group>";
+		};
+		041F069721922BCB009B3CF9 /* Album Cell */ = {
+			isa = PBXGroup;
+			children = (
+				041F069821922C00009B3CF9 /* AlbumCollectionViewCell.swift */,
+				041F069921922C00009B3CF9 /* AlbumCollectionViewCell.xib */,
+			);
+			name = "Album Cell";
+			sourceTree = "<group>";
+		};
+		041F069C21933558009B3CF9 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */,
+			);
+			path = Pictures;
 			sourceTree = "<group>";
 		};
 		3CE9F6E5D6A6534FAB858F35 /* Pods */ = {
@@ -195,6 +236,7 @@
 			files = (
 				041F0672218F04AC009B3CF9 /* LaunchScreen.storyboard in Resources */,
 				041F0688218F695B009B3CF9 /* GoogleService-Info.plist in Resources */,
+				041F069B21922C00009B3CF9 /* AlbumCollectionViewCell.xib in Resources */,
 				041F066F218F04AC009B3CF9 /* Assets.xcassets in Resources */,
 				041F066D218F04AA009B3CF9 /* Main.storyboard in Resources */,
 			);
@@ -260,6 +302,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -272,6 +315,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -285,11 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041F067D218F0719009B3CF9 /* LoginPresenter.swift in Sources */,
-				041F0683218F6222009B3CF9 /* LoginService.swift in Sources */,
-				041F066A218F04AA009B3CF9 /* LoginViewController.swift in Sources */,
+				041F06952190C486009B3CF9 /* AlbumPicturesPresenter.swift in Sources */,
+				041F069E2193370D009B3CF9 /* PicturesCollectionViewController.swift in Sources */,
+				041F06912190C3BC009B3CF9 /* AlbumPicturesViewController.swift in Sources */,
+				041F069A21922C00009B3CF9 /* AlbumCollectionViewCell.swift in Sources */,
 				041F0668218F04AA009B3CF9 /* AppDelegate.swift in Sources */,
 				041F0686218F6545009B3CF9 /* FacebookConnectViewController.swift in Sources */,
+				041F068E2190B18F009B3CF9 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

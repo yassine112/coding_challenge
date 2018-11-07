@@ -1,0 +1,104 @@
+//
+//  AlbumPicturesPresenter.swift
+//  Adrea_Test
+//
+//  Created by Fly on 11/5/18.
+//  Copyright © 2018 Fly. All rights reserved.
+//
+
+import Foundation
+import FBSDKLoginKit
+
+class AlbumPicturesPresenter {
+
+    weak var view: AlbumPicturesView?
+
+    /// Connect the presenter to the view to use here functions
+    func attach(view: AlbumPicturesView) {
+        self.view = view
+    }
+
+    func detachView() {
+        self.view = nil
+    }
+
+    /// Get user albums from Facebook SDK
+    /// Before we check if the user if connected
+    /// Success : we fire setAlbum from the view
+    /// Failure : we fire Faild from the view
+    func getAlbums() {
+
+        if !FBSDKAccessToken.currentAccessTokenIsActive() {
+            view?.showLoginPage()
+        } else {
+            FBSDKGraphRequest(graphPath: "/me/albums?fields=picture,name,count", parameters: [:], httpMethod: "GET").start(completionHandler: {  (connection, result, error) in
+                if error != nil {
+                    self.view?.faild(error: error.debugDescription)
+                    return
+                }
+
+                let albums = self.extractAlbumList(result)
+                self.view?.setAlbums(albums: albums)
+
+            })
+        }
+
+    }
+
+    /// Extract Albums from sdk albums call and return an array of albums
+    /// @Param data: Any?
+    /// @Return [Album]
+    private func extractAlbumList(_ data: Any?) -> [Album] {
+
+        var albums = [Album]()
+        if let res = data as? [String: Any] {
+            if let data = res["data"] as? NSArray {
+                for item in data {
+                    if let itemD = item as? [String: Any] {
+                        if let id = itemD["id"] as? String ,
+                            let count = itemD["count"] as? Int,
+                            let name = itemD["name"] as? String,
+                            let picture = itemD["picture"] as? [String: [String: Any]],
+                            let data = picture["data"],
+                            let url = data["url"] as? String {
+
+                            // Add the album to the  list that we going to return
+                            albums.append(Album(id: id, name: name, count: count, imageUrl: url))
+
+                        }
+                    }
+                }
+            }
+        }
+        return albums
+
+    }
+    
+}
+
+
+
+//if let result = result as? [String: Any] {
+//    if let data = result["data"] as? NSArray  {
+//        for item in data {
+//            if let itemD = item as? [String: Any] {
+//                print(itemD)
+//
+//                let id = itemD["id"] ?? ""
+//                let count = itemD["count"] ?? 0
+//                let name = itemD["name"] ?? ""
+//                if let picture = itemD["picture"] as? [String : [String: Any]] {
+//                    if let data = picture["data"] {
+//
+//                        let url = data["url"] ?? ""
+//
+//
+//
+//                    }
+//                }
+//
+//
+//            }
+//        }
+//    }
+//}

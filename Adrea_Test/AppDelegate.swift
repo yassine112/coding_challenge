@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,13 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
 
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-        
-        window?.rootViewController = loginViewController
+        if let albumPicturesViewController = storyboard.instantiateViewController(withIdentifier: "albumPicturesViewController") as? AlbumPicturesViewController {
+
+            let presenter = AlbumPicturesPresenter()
+            albumPicturesViewController.presenter = presenter
+
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: albumPicturesViewController)
+
+        }
+
+
+
 
         return true
     }

@@ -7,21 +7,32 @@
 //
 
 import UIKit
-import FacebookCore
+import FBSDKLoginKit
 
 class FacebookConnectViewController: UIViewController {
 
+    @IBOutlet weak var FBLoginBtn: FBSDKLoginButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        FBLoginBtn.delegate = self
+    }
 
-        let connection = GraphRequestConnection()
-        connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+}
 
-            print(result)
 
+extension FacebookConnectViewController: FBSDKLoginButtonDelegate {
+
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did logout of facebook")
+    }
+
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
         }
-
-        // Do any additional setup after loading the view.
+        dismiss(animated: true, completion: nil)
     }
 
 }

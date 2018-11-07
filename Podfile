@@ -10,4 +10,7 @@ target 'Adrea_Test' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
 
+  #Fetch image from network
+  pod 'Kingfisher', '~> 4.10'
+
 end

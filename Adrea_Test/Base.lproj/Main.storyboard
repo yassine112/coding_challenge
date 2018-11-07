@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RJ-kF-bTT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -107,17 +107,84 @@
         <!--Facebook Connect View Controller-->
         <scene sceneID="yOt-iG-1ln">
             <objects>
-                <viewController id="6RJ-kF-bTT" customClass="FacebookConnectViewController" customModule="Adrea_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="facebookConnectViewController" id="6RJ-kF-bTT" customClass="FacebookConnectViewController" customModule="Adrea_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lD9-Sc-3fw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vwy-jN-xj2">
+                                <rect key="frame" x="137.5" y="165.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="CgI-Or-3de"/>
+                                    <constraint firstAttribute="height" constant="100" id="wDk-I5-tMt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-S8-Clp" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to your Facebook account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSC-MI-5ZS">
+                                <rect key="frame" x="53.5" y="281.5" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hRe-S8-Clp" firstAttribute="centerX" secondItem="lD9-Sc-3fw" secondAttribute="centerX" id="9ce-zG-pC8"/>
+                            <constraint firstItem="hRe-S8-Clp" firstAttribute="top" secondItem="gSC-MI-5ZS" secondAttribute="bottom" constant="16" id="T5A-nv-5a5"/>
+                            <constraint firstItem="Vwy-jN-xj2" firstAttribute="centerX" secondItem="lD9-Sc-3fw" secondAttribute="centerX" id="Up7-DK-eHG"/>
+                            <constraint firstItem="hRe-S8-Clp" firstAttribute="centerY" secondItem="lD9-Sc-3fw" secondAttribute="centerY" id="axd-jE-nWQ"/>
+                            <constraint firstItem="gSC-MI-5ZS" firstAttribute="centerX" secondItem="lD9-Sc-3fw" secondAttribute="centerX" id="nVR-Bs-2Xf"/>
+                            <constraint firstItem="gSC-MI-5ZS" firstAttribute="top" secondItem="Vwy-jN-xj2" secondAttribute="bottom" constant="16" id="tT2-38-zVp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M9G-IH-8XO"/>
                     </view>
+                    <connections>
+                        <outlet property="FBLoginBtn" destination="hRe-S8-Clp" id="cjj-p0-jbO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBf-Ak-ef0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="26"/>
         </scene>
+        <!--Album Pictures View Controller-->
+        <scene sceneID="GE6-YM-eQM">
+            <objects>
+                <collectionViewController storyboardIdentifier="albumPicturesViewController" id="5SM-WQ-0wG" customClass="AlbumPicturesViewController" customModule="Adrea_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wQV-jL-2oW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YbO-Q8-rrR">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A5Z-BQ-3G2">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5SM-WQ-0wG" id="L8W-xD-ZJP"/>
+                            <outlet property="delegate" destination="5SM-WQ-0wG" id="TjX-FR-oxb"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRs-V8-JWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="26"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="facebook_logo" width="128" height="128"/>
+    </resources>
 </document>
