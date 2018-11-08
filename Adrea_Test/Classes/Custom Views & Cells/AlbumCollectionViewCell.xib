@@ -20,10 +20,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-Gv-Tlu">
-                        <rect key="frame" x="0.0" y="0.0" width="199" height="212.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="199" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="ZsZ-D9-ux7"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOI-JL-Abn">
-                        <rect key="frame" x="0.0" y="212.5" width="199" height="106.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOI-JL-Abn">
+                        <rect key="frame" x="0.0" y="200" width="199" height="119"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,16 +34,13 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="XOI-JL-Abn" firstAttribute="top" secondItem="JCg-Gv-Tlu" secondAttribute="bottom" id="Kcd-ol-FDN"/>
-                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Kdf-SY-avY"/>
-                <constraint firstItem="XOI-JL-Abn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RBu-zQ-5da"/>
-                <constraint firstAttribute="trailing" secondItem="JCg-Gv-Tlu" secondAttribute="trailing" id="WLN-ng-wd8"/>
-                <constraint firstAttribute="bottom" secondItem="XOI-JL-Abn" secondAttribute="bottom" id="dAA-SK-coL"/>
-                <constraint firstAttribute="trailing" secondItem="XOI-JL-Abn" secondAttribute="trailing" id="dmO-CZ-DRx"/>
-                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fbP-Eu-JI9"/>
-                <constraint firstAttribute="trailing" secondItem="JCg-Gv-Tlu" secondAttribute="trailing" id="hwU-hv-aeh"/>
-                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nQe-OP-xUS"/>
-                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="2:3" id="o3Q-fs-C4d"/>
+                <constraint firstAttribute="bottom" secondItem="XOI-JL-Abn" secondAttribute="bottom" id="CDe-mO-UCj"/>
+                <constraint firstAttribute="trailing" secondItem="JCg-Gv-Tlu" secondAttribute="trailing" id="DEP-ZI-whx"/>
+                <constraint firstItem="XOI-JL-Abn" firstAttribute="top" secondItem="JCg-Gv-Tlu" secondAttribute="bottom" id="FQL-6B-aPf"/>
+                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gQA-cM-jE8"/>
+                <constraint firstItem="XOI-JL-Abn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hUi-Tj-5Qe"/>
+                <constraint firstAttribute="trailing" secondItem="XOI-JL-Abn" secondAttribute="trailing" id="hec-pC-cl2"/>
+                <constraint firstItem="JCg-Gv-Tlu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tn1-dq-q7c"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="199" height="319"/>

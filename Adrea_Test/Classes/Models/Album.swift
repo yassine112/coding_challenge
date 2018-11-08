@@ -2,8 +2,8 @@
 //  Album.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/5/18.
-//  Copyright © 2018 Fly. All rights reserved.
+//  Created by Yassine EL HALAOUI on 11/5/18.
+//  Copyright © 2018 YEL. All rights reserved.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/4/18.
+//  Created by Yassine EL HALAOUI on 11/4/18.
 //  Copyright © 2018 Fly. All rights reserved.
 //
 
@@ -17,13 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
 
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
-
 
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         if let albumPicturesViewController = storyboard.instantiateViewController(withIdentifier: "albumPicturesViewController") as? AlbumPicturesViewController {

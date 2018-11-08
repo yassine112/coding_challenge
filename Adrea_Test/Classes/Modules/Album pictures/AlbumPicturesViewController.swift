@@ -2,8 +2,8 @@
 //  AlbumPicturesViewController.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/5/18.
-//  Copyright © 2018 Fly. All rights reserved.
+//  Created by Yassine EL HALAOUI on 11/5/18.
+//  Copyright © 2018 YEL. All rights reserved.
 //
 
 import UIKit
@@ -15,12 +15,12 @@ protocol AlbumPicturesView: class {
     func faild(error: String)
 }
 
+private let cellId = "cell"
+
 class AlbumPicturesViewController: UICollectionViewController {
 
     var presenter: AlbumPicturesPresenter!
     private var albums = [Album]()
-
-    let cellId = "albumCell"
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -28,13 +28,22 @@ class AlbumPicturesViewController: UICollectionViewController {
          self.collectionView.register(UINib(nibName: "AlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellId)
 
         presenter.attach(view: self)
-        presenter.getAlbums()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logout))
+
+        // Set up the cell size
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-
         let cellWidth = (self.collectionView.frame.width / 2) - 8
-        layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth + 100)
 
+    }
+
+    @objc func logout() {
+       presenter.logout()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.getAlbums()
     }
 
     deinit {
@@ -57,7 +66,14 @@ class AlbumPicturesViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+
+        // Push the next Poctures View Controller
+        // We pass the album id
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let picturesVC = storyboard.instantiateViewController(withIdentifier: "picturesCollectionViewController") as! PicturesCollectionViewController
+        picturesVC.albumId = albums[indexPath.row].id
+        picturesVC.presenter = PicturesPresenter()
+        self.navigationController?.pushViewController(picturesVC, animated: true)
     }
 
 }

@@ -2,8 +2,8 @@
 //  AlbumCollectionViewCell.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/6/18.
-//  Copyright © 2018 Fly. All rights reserved.
+//  Created by Yassine EL HALAOUI on 11/6/18.
+//  Copyright © 2018 YEL. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ import Kingfisher
 
 class AlbumCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 

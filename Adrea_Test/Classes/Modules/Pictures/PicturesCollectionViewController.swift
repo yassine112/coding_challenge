@@ -2,88 +2,78 @@
 //  PicturesCollectionViewController.swift
 //  Adrea_Test
 //
-//  Created by Fly on 11/7/18.
-//  Copyright © 2018 Fly. All rights reserved.
+//  Created by Yassine EL HALAOUI on 11/7/18.
+//  Copyright © 2018 YEL. All rights reserved.
 //
 
 import UIKit
+
+protocol PicturesView: class {
+    func setPictures(pictures: [Picture])
+    func getAlbumId() -> String
+    func faild(error: String)
+}
 
 private let reuseIdentifier = "Cell"
 
 class PicturesCollectionViewController: UICollectionViewController {
 
+    var presenter: PicturesPresenter!
+
+    private var pictures = [Picture]()
+    var albumId: String!
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UINib(nibName: "PictureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
+        presenter.attach(self)
+        presenter.getPictures()
+
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+
+        let cellWidth = (self.collectionView.frame.width / 2) - 8
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth + 100)
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    // MARK: - Delegate & Datasource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return pictures.count
+
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PictureCollectionViewCell {
     
-        // Configure the cell
-    
-        return cell
+            // Configure the cell
+            cell.picture = pictures[indexPath.row]
+            return cell
+
+        }
+        return UICollectionViewCell()
     }
 
-    // MARK: UICollectionViewDelegate
+}
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+extension PicturesCollectionViewController: PicturesView {
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+    func setPictures(pictures: [Picture]) {
+        self.pictures = pictures
+        self.collectionView.reloadData()
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
+    func getAlbumId() -> String {
+        return albumId
     }
 
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
+    func faild(error: String) {
+        print(error)
     }
-    */
 
 }
