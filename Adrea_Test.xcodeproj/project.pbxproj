@@ -19,6 +19,10 @@
 		041F069A21922C00009B3CF9 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F069821922C00009B3CF9 /* AlbumCollectionViewCell.swift */; };
 		041F069B21922C00009B3CF9 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041F069921922C00009B3CF9 /* AlbumCollectionViewCell.xib */; };
 		041F069E2193370D009B3CF9 /* PicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */; };
+		041F06A0219483DA009B3CF9 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F069F219483DA009B3CF9 /* Picture.swift */; };
+		041F06A22194A2AD009B3CF9 /* PicturesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F06A12194A2AD009B3CF9 /* PicturesPresenter.swift */; };
+		041F06A72194A965009B3CF9 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F06A52194A965009B3CF9 /* PictureCollectionViewCell.swift */; };
+		041F06A82194A965009B3CF9 /* PictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041F06A62194A965009B3CF9 /* PictureCollectionViewCell.xib */; };
 		713BE4E0A868922A50794AB7 /* Pods_Adrea_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F1EECA347B5FF2C5DC6737 /* Pods_Adrea_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		041F069821922C00009B3CF9 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		041F069921922C00009B3CF9 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCollectionViewController.swift; sourceTree = "<group>"; };
+		041F069F219483DA009B3CF9 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		041F06A12194A2AD009B3CF9 /* PicturesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenter.swift; sourceTree = "<group>"; };
+		041F06A52194A965009B3CF9 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		041F06A62194A965009B3CF9 /* PictureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCollectionViewCell.xib; sourceTree = "<group>"; };
 		26B09AF8F734E83E41640E6F /* Pods-Adrea_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adrea_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adrea_Test/Pods-Adrea_Test.debug.xcconfig"; sourceTree = "<group>"; };
 		55F1EECA347B5FF2C5DC6737 /* Pods_Adrea_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adrea_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D350C5A46B3CF6ED6D3D29 /* Pods-Adrea_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adrea_Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Adrea_Test/Pods-Adrea_Test.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				041F068D2190B18F009B3CF9 /* Album.swift */,
+				041F069F219483DA009B3CF9 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +143,7 @@
 		041F069621922B7A009B3CF9 /* Custom Views & Cells */ = {
 			isa = PBXGroup;
 			children = (
+				041F06A42194A93F009B3CF9 /* Picture Cell */,
 				041F069721922BCB009B3CF9 /* Album Cell */,
 			);
 			path = "Custom Views & Cells";
@@ -152,8 +162,18 @@
 			isa = PBXGroup;
 			children = (
 				041F069D2193370D009B3CF9 /* PicturesCollectionViewController.swift */,
+				041F06A12194A2AD009B3CF9 /* PicturesPresenter.swift */,
 			);
 			path = Pictures;
+			sourceTree = "<group>";
+		};
+		041F06A42194A93F009B3CF9 /* Picture Cell */ = {
+			isa = PBXGroup;
+			children = (
+				041F06A52194A965009B3CF9 /* PictureCollectionViewCell.swift */,
+				041F06A62194A965009B3CF9 /* PictureCollectionViewCell.xib */,
+			);
+			name = "Picture Cell";
 			sourceTree = "<group>";
 		};
 		3CE9F6E5D6A6534FAB858F35 /* Pods */ = {
@@ -239,6 +259,7 @@
 				041F069B21922C00009B3CF9 /* AlbumCollectionViewCell.xib in Resources */,
 				041F066F218F04AC009B3CF9 /* Assets.xcassets in Resources */,
 				041F066D218F04AA009B3CF9 /* Main.storyboard in Resources */,
+				041F06A82194A965009B3CF9 /* PictureCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +351,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				041F06952190C486009B3CF9 /* AlbumPicturesPresenter.swift in Sources */,
+				041F06A0219483DA009B3CF9 /* Picture.swift in Sources */,
 				041F069E2193370D009B3CF9 /* PicturesCollectionViewController.swift in Sources */,
 				041F06912190C3BC009B3CF9 /* AlbumPicturesViewController.swift in Sources */,
+				041F06A22194A2AD009B3CF9 /* PicturesPresenter.swift in Sources */,
 				041F069A21922C00009B3CF9 /* AlbumCollectionViewCell.swift in Sources */,
 				041F0668218F04AA009B3CF9 /* AppDelegate.swift in Sources */,
+				041F06A72194A965009B3CF9 /* PictureCollectionViewCell.swift in Sources */,
 				041F0686218F6545009B3CF9 /* FacebookConnectViewController.swift in Sources */,
 				041F068E2190B18F009B3CF9 /* Album.swift in Sources */,
 			);
