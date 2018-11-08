@@ -7,13 +7,6 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-
-protocol AlbumPicturesView: class {
-    func setAlbums(albums: [Album])
-    func showLoginPage()
-    func faild(error: String)
-}
 
 private let cellId = "cell"
 
@@ -38,11 +31,8 @@ class AlbumPicturesViewController: UICollectionViewController {
 
     }
 
-    @objc func logout() {
-       presenter.logout()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.getAlbums()
     }
 
@@ -74,6 +64,12 @@ class AlbumPicturesViewController: UICollectionViewController {
         picturesVC.albumId = albums[indexPath.row].id
         picturesVC.presenter = PicturesPresenter()
         self.navigationController?.pushViewController(picturesVC, animated: true)
+    }
+
+    // MARK: - Functions @Objc
+    
+    @objc func logout() {
+        presenter.logout()
     }
 
 }

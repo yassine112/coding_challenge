@@ -35,13 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }
 
-
-
-
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
         let handel = FBSDKApplicationDelegate.sharedInstance()?.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation] as! String)
         return handel ?? false
     }

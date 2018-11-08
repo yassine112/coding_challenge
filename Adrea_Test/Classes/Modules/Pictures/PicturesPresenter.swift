@@ -9,6 +9,12 @@
 import Foundation
 import FBSDKLoginKit
 
+protocol PicturesView: class {
+    func setPictures(pictures: [Picture])
+    func getAlbumId() -> String
+    func faild(error: String)
+}
+
 class PicturesPresenter {
 
     private weak var view: PicturesView?
@@ -18,6 +24,7 @@ class PicturesPresenter {
         self.view = View
     }
 
+    /// Deconnect the presenter from the view
     func dettachView() {
         self.view = nil
     }
@@ -33,16 +40,17 @@ class PicturesPresenter {
                     self.view?.faild(error: error.debugDescription)
                     return
                 }
-                // print(result!)
 
                 let pictures = self.extractImageList(result)
-//                print(pictures)
                 self.view?.setPictures(pictures: pictures)
             })
 
         }
     }
 
+    /// Extract Pictures from sdk albums call and return an array of picturs
+    /// @Param data: Any?
+    /// @Return [Picture]
     func extractImageList(_ Data: Any?) -> [Picture] {
 
         var pictures = [Picture]()

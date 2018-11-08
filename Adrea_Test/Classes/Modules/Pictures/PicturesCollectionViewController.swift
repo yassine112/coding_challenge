@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol PicturesView: class {
-    func setPictures(pictures: [Picture])
-    func getAlbumId() -> String
-    func faild(error: String)
-}
-
 private let reuseIdentifier = "Cell"
 
 class PicturesCollectionViewController: UICollectionViewController {

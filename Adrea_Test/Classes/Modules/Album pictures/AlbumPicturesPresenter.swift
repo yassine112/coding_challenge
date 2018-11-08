@@ -9,6 +9,12 @@
 import Foundation
 import FBSDKLoginKit
 
+protocol AlbumPicturesView: class {
+    func setAlbums(albums: [Album])
+    func showLoginPage()
+    func faild(error: String)
+}
+
 class AlbumPicturesPresenter {
 
     weak var view: AlbumPicturesView?
@@ -19,6 +25,7 @@ class AlbumPicturesPresenter {
         self.view = view
     }
 
+    /// Deconnect the presenter from the view
     func detachView() {
         self.view = nil
     }
@@ -74,6 +81,8 @@ class AlbumPicturesPresenter {
         return albums
     }
 
+    /// Use FBSDKLoginManager To Log out from the app
+    /// And Show the Login form
     func logout() {
         manager.logOut()
         view?.showLoginPage()

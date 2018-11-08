@@ -25,10 +25,12 @@ class FacebookConnectViewController: UIViewController {
 // MARK: - Facebook SDK Delegation
 extension FacebookConnectViewController: FBSDKLoginButtonDelegate {
 
+    // Fired when the user's loged out
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did logout of facebook")
     }
 
+    // Fired when the user's loged in
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil {
             print(error)
